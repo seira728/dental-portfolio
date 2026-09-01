@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 768px) {
+
+  .container {
+    padding: 50px 0;
+  }
+
+	.information_inner {
+    grid-template-columns: 1fr;
+  }
+  /*greeting*/
+  .greeting_flex{
+    grid-template-columns: 1fr;
+  }
+  .greeting_txt{
+    width: 100%;
+  }
+
+  .greeting_img{
+    width: 100%;
+  }
+
+  /*feature*/
+  .feature_items{
+    grid-template-columns: 1fr;
+  }
+  .feature_item h3{
+    font-size: 20px;
+  }
+}
