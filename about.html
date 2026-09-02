@@ -13,13 +13,15 @@
 
 <body>
 
-  <!-- ヘッダー -->
+  <!------------ ヘッダー ------------>
   <header class="header">
     <div class="header__inner">
       <a href="index.html" class="header__logo">
-        <img src="img/logo.png" alt="さくらデンタルクリニック">
+        <h1>
+          <img src="img/logo.png" alt="さくらデンタルクリニック">
+        </h1>
       </a>
-
+      <!-- PC用ナビ -->
       <nav class="header__nav">
         <ul>
           <li class="header_link"><a href="index.html">ホーム</a></li>
@@ -30,34 +32,134 @@
           <li class="Web_reserve"><a href="#">WEB予約</a></li>
         </ul>
       </nav>
-
+      <!-- ハンバーガーボタン -->
+      <button class="hamburger" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+    <!-- スマホ用メニュー -->
+    <nav class="sp-nav">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="about.html">当院について</a></li>
+        <li><a href="medical.html">診療案内</a></li>
+        <li><a href="doctor.html">院長紹介</a></li>
+        <li><a href="access.html">アクセス</a></li>
+        <li class="sp-nav__reserve">
+          <a href="#">WEB予約</a>
+        </li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <!-- 下層MV -->
+    <!------------ 下層MV ------------>
     <section class="sub_mv">
       <div class="sub_mv_container">
         <span>CLINIC</span><h2>当院について</h2>
       </div>
     </section>
 
-    <section class="greeting">
-      <div class="greeting_inner container">
-        <div class="section-title">
-          <span>GREETING</span>
-          <h2>ごあいさつ</h2>
-        </div>
-        <div class="greeting_flex fade-up">
-          <div class="greeting_txt">
-            <p>当院では、患者さま一人ひとりのお悩みやご希望に丁寧に耳を傾け、安心して治療を受けていただける歯科医療を大切にしています。<br>
-              「歯医者は怖い」「治療について相談しづらい」と感じている方にも、できるだけリラックスしていただけるよう、わかりやすい説明と丁寧な診療を心がけています。<br>
-              また、痛みのある部分だけを治療するのではなく、将来のお口の健康まで見据えた予防・メンテナンスにも力を入れています。<br>
-              地域の皆さまに「ここに来てよかった」と思っていただける歯科医院を目指し、スタッフ一同、心を込めて診療してまいります。<br>
-              お口のことで気になることがございましたら、どうぞお気軽にご相談ください。</p>
+    <!------------ 院内ギャラリー ------------>
+    <section class="carousel container">
+      <div class="section-title">
+        <span>GALLERY</span>
+        <h2>医院紹介</h2>
+      </div>
+      <div class="carousel__container">
+        <!-- 写真 -->
+        <div class="carousel__slides">
+          <div class="carousel__slide">
+            <img src="img/mv01.jpg" alt="">
           </div>
-          <div class="greeting_img">
-            <img src="img/mv01.jpg" alt="さくらデンタルクリニックの診療室">
+          <div class="carousel__slide">
+            <img src="img/mv02.jpg" alt="">
+          </div>
+          <div class="carousel__slide">
+            <img src="img/mv03.jpg" alt="">
+          </div>
+          <!--<div class="carousel__slide">
+            <img src="img/clinic04.jpg" alt="さくらデンタルクリニックの待合室">
+          </div>-->
+        </div>
+        <!-- 左右のボタン -->
+        <button class="carousel__button carousel__button--prev">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="carousel__button carousel__button--next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+      <!-- ドット -->
+      <div class="carousel__dots">
+        <button class="carousel__dot active" aria-label="1枚目"></button>
+        <button class="carousel__dot" aria-label="2枚目"></button>
+        <button class="carousel__dot" aria-label="3枚目"></button>
+        <!--<button class="carousel__dot" aria-label="4枚目"></button>-->
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="faq__inner container">
+        <div class="section-title">
+          <span>GALLERY</span>
+          <h2>医院紹介</h2>
+        </div>
+        <div class="faq__list">
+          <div class="faq__item">
+            <button class="faq__question" type="button">
+              <span class="faq__icon">Q</span>
+              <span class="faq__text">初診でも予約は必要ですか？</span>
+              <span class="faq__arrow"></span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                <span class="faq__icon faq__icon--answer">A</span>
+                <p>
+                  はい、事前のご予約をおすすめしております。
+                  お電話またはWeb予約よりお気軽にご予約ください。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question" type="button">
+              <span class="faq__icon">Q</span>
+              <span class="faq__text">治療期間はどのくらいかかりますか？</span>
+              <span class="faq__arrow"></span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                <span class="faq__icon faq__icon--answer">A</span>
+                <p>
+                  お口の状態や治療内容によって異なります。
+                  初診時にお口の状態を確認し、治療計画をご説明いたします。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question" type="button">
+              <span class="faq__icon">Q</span>
+              <span class="faq__text">痛みが苦手なのですが、対応できますか？</span>
+              <span class="faq__arrow"></span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                <span class="faq__icon faq__icon--answer">A</span>
+                <p>
+                  できるだけ痛みを抑えた治療を心がけています。
+                  不安なことがございましたら、遠慮なくスタッフへご相談ください。
+                  できるだけ痛みを抑えた治療を心がけています。
+                  不安なことがございましたら、遠慮なくスタッフへご相談ください。
+                  できるだけ痛みを抑えた治療を心がけています。
+                  不安なことがございましたら、遠慮なくスタッフへご相談ください。
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
