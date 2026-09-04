@@ -1,0 +1,247 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 960px) {
+  /**********************************************
+  header
+  **********************************************/
+  .header__inner{
+    padding: 10px;
+  }
+  .header__logo img {
+      max-width: 80px;
+  }
+  .header__nav {
+    display: none;
+  }
+  /*ハンバーガーメニュー*/
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+  }
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .hamburger span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background-color: #333;
+    transition: 0.3s ease;
+  }
+  .sp-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 250px;
+    height: 100vh;
+    padding: 50px 30px 40px;
+    background-color: #fff;
+    transition: right 0.4s ease;
+    z-index: 999;
+  }
+  .sp-nav.active {
+    right: 0;
+  }
+  .sp-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sp-nav a {
+    display: block;
+    padding: 20px 10px;
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  /*ドロップダウンメニュー*/
+  .sp-nav__dropdown {
+    position: relative;
+    list-style: none;
+  }
+  .sp-nav__toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 10px;
+    border: none;
+    background: transparent;
+    color: #333;
+    font: inherit;
+    cursor: pointer;
+  }
+  .sp-nav__toggle:hover {
+    opacity: 0.5;
+  }
+  .sp-nav__arrow {
+    position: absolute;
+    right: 25px;
+    width: 8px;
+    height: 8px;
+    border-right: 1px solid var(--deep);
+    border-bottom: 1px solid var(--deep);
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+  }
+  .sp-nav__dropdown.active .sp-nav__arrow {
+    transform: rotate(225deg);
+  }
+  .sp-nav__submenu {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    height: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+      height 0.35s ease,
+      opacity 0.25s ease;
+    gap: 1px;
+  }
+  .sp-nav__dropdown.active .sp-nav__submenu {
+    height: auto;
+    opacity: 1;
+  }
+  .sp-nav__submenu li {
+    display: block !important;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none;
+  }
+  .sp-nav__submenu li a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    background: var(--deep);
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+  }
+
+/**********************************************
+TOP
+**********************************************/
+/*information*/
+	.information_inner {
+    grid-template-columns: 1fr;
+  }
+  .section-title--left{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /*.container {
+    padding: 50px 0;
+  }*/
+  .sp-only-br {
+    display: block;
+  }
+
+  /**********************************************
+  TOP
+  **********************************************/
+  /*greeting*/
+  .greeting_flex{
+    grid-template-columns: 1fr;
+  }
+  .greeting_txt{
+    width: 100%;
+  }
+  .greeting_img{
+    width: 100%;
+  }
+
+  /*feature*/
+  .feature_items{
+    grid-template-columns: 1fr;
+  }
+  .feature_item h3{
+    font-size: 20px;
+  }
+
+  /**********************************************
+  下層ページ_当院について
+  **********************************************/
+  /*よくある質問*/
+  .faq__list {
+    margin-top: 35px;
+  }
+  .faq__text {
+    font-size: 14px;
+  }
+  .faq__answer p {
+    font-size: 14px;
+  }
+  .faq__arrow {
+    right: 20px;
+  }
+
+  /**********************************************
+  下層ページ_診療案内
+  **********************************************/
+  /*共通*/
+  .medical_flex {
+    grid-template-columns: 1fr;
+  }
+  .medical_flex_title{
+    font-size: 20px;
+  }
+
+  /*お悩み*/
+  .trouble {
+    padding: 15px;
+  }
+  .trouble__inner {
+    padding: 50px 30px;
+    border-radius: 30px;
+  }
+  .trouble__list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .trouble__title {
+    margin-bottom: 25px;
+  }
+  
+  /*表1*/
+  .medical_table1 th{
+    display: block;
+    border: none;
+  }
+  .medical_table1 td{
+    display: block;
+  }
+
+  /*表2*/
+  .medical_table2 {
+    width: 768px;
+  }
+}
