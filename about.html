@@ -9,9 +9,10 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="preload" as="image" href="img/mv01.jpg">
+  <link rel="preload" as="image" href="img/mv02.jpg">
+  <link rel="preload" as="image" href="img/mv03.jpg">
   <link rel="stylesheet" href="https://unpkg.com/scroll-hint@latest/css/scroll-hint.css">
-  <script src="https://unpkg.com/scroll-hint@latest/js/scroll-hint.min.js"></script>
-  <script src="js/main.js"></script>
 </head>
 
 <body>
@@ -29,7 +30,15 @@
         <ul>
           <li class="header_link"><a href="index.html">ホーム</a></li>
           <li class="header_link"><a href="about.html">当院について</a></li>
-          <li class="header_link"><a href="medical.html">診療案内</a></li>
+          <li class="header_link header_link--dropdown">
+            <span class="dropdown-toggle">診療案内</span>
+            <ul class="dropdown-menu">
+              <li><a href="general.html">一般歯科</a></li>
+              <li><a href="perio.html">歯周病治療</a></li>
+              <li><a href="cosme.html">詰め物・被せ物</a></li>
+              <li><a href="esthetic.html">審美歯科</a></li>
+            </ul>
+          </li>
           <li class="header_link"><a href="doctor.html">院長紹介</a></li>
           <li class="header_link"><a href="access.html">アクセス</a></li>
           <li class="Web_reserve"><a href="#">WEB予約</a></li>
@@ -47,7 +56,18 @@
       <ul>
         <li><a href="index.html">ホーム</a></li>
         <li><a href="about.html">当院について</a></li>
-        <li><a href="medical.html">診療案内</a></li>
+        <li class="sp-nav__dropdown">
+          <button type="button" class="sp-nav__toggle">
+            診療案内
+            <span class="sp-nav__arrow"></span>
+          </button>
+          <ul class="sp-nav__submenu">
+            <li><a href="general.html">一般歯科</a></li>
+            <li><a href="perio.html">歯周病治療</a></li>
+            <li><a href="cosme.html">詰め物・被せ物</a></li>
+            <li><a href="esthetic.html">審美歯科</a></li>
+          </ul>
+        </li>
         <li><a href="doctor.html">院長紹介</a></li>
         <li><a href="access.html">アクセス</a></li>
         <li class="sp-nav__reserve">
@@ -189,6 +209,34 @@
     </div>
   </footer>
 
+  <!-- TOPへ戻る -->
+  <a href="#" class="page-top" aria-label="ページトップへ戻る">
+    <i class="fa-solid fa-chevron-up"></i>
+  </a>
+
+  <!-- SPフローティングボタン -->
+  <div class="sp-fixed-buttons">
+    <a href="tel:03-1234-5678" class="button">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-phone"></i>
+      </div>
+      <div class="text">TEL</div>
+    </a>
+    <a href="https://maps.app.goo.gl/AXpgTwd56vxicGBy7" class="button" target="_blank" rel="noopener noreferrer">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-location-dot"></i>
+      </div>
+      <div class="text">ACCESS</div>
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer" class="button" target="_blank">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-desktop"></i>
+      </div>
+      <div class="text">WEB予約</div>
+    </a>
+  </div>
+
+<script src="https://unpkg.com/scroll-hint@latest/js/scroll-hint.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 

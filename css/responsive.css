@@ -146,6 +146,13 @@
   }
 
 /**********************************************
+MV
+**********************************************/
+  .mv {
+    padding-top: 70px;
+  }
+
+/**********************************************
 TOP
 **********************************************/
 /*information*/
@@ -155,12 +162,38 @@ TOP
   .section-title--left{
     text-align: center;
   }
+
+  /**********************************************
+  TOPへ戻るボタン
+  **********************************************/
+  .page-top {
+      right: 15px;
+      bottom: 90px;
+      width: 45px;
+      height: 45px;
+  }
+
+  /**********************************************
+  SPフローティングボタン
+  **********************************************/
+  body {
+    margin-bottom: 80px;
+  }
+  .sp-fixed-buttons {
+    display: grid;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  /*.container {
-    padding: 50px 0;
-  }*/
+  .cont_flex{
+    grid-template-columns: 1fr;
+  }
+  .cont_flex_txt{
+    width: 100%;
+  }
+  .cont_flex_img{
+    width: 100%;
+  }
   .sp-only-br {
     display: block;
   }
@@ -168,18 +201,7 @@ TOP
   /**********************************************
   TOP
   **********************************************/
-  /*greeting*/
-  .greeting_flex{
-    grid-template-columns: 1fr;
-  }
-  .greeting_txt{
-    width: 100%;
-  }
-  .greeting_img{
-    width: 100%;
-  }
-
-  /*feature*/
+    /*feature*/
   .feature_items{
     grid-template-columns: 1fr;
   }
@@ -208,9 +230,6 @@ TOP
   下層ページ_診療案内
   **********************************************/
   /*共通*/
-  .medical_flex {
-    grid-template-columns: 1fr;
-  }
   .medical_flex_title{
     font-size: 20px;
   }
@@ -243,5 +262,12 @@ TOP
   /*表2*/
   .medical_table2 {
     width: 768px;
+  }
+
+  /**********************************************
+  下層ページ_院長紹介
+  **********************************************/
+  .doctor_box__inner {
+    padding: 40px 20px;
   }
 }

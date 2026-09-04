@@ -9,9 +9,10 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="preload" as="image" href="img/mv01.jpg">
+  <link rel="preload" as="image" href="img/mv02.jpg">
+  <link rel="preload" as="image" href="img/mv03.jpg">
   <link rel="stylesheet" href="https://unpkg.com/scroll-hint@latest/css/scroll-hint.css">
-  <script src="https://unpkg.com/scroll-hint@latest/js/scroll-hint.min.js"></script>
-  <script src="js/main.js"></script>
 </head>
 
 <body>
@@ -34,7 +35,7 @@
             <ul class="dropdown-menu">
               <li><a href="general.html">一般歯科</a></li>
               <li><a href="perio.html">歯周病治療</a></li>
-              <li><a href="prevention.html">予防歯科</a></li>
+              <li><a href="cosme.html">詰め物・被せ物</a></li>
               <li><a href="esthetic.html">審美歯科</a></li>
             </ul>
           </li>
@@ -63,7 +64,7 @@
           <ul class="sp-nav__submenu">
             <li><a href="general.html">一般歯科</a></li>
             <li><a href="perio.html">歯周病治療</a></li>
-            <li><a href="prevention.html">予防歯科</a></li>
+            <li><a href="cosme.html">詰め物・被せ物</a></li>
             <li><a href="esthetic.html">審美歯科</a></li>
           </ul>
         </li>
@@ -111,7 +112,7 @@
 
     <!-- お知らせ・アクセス -->
     <section class="information">
-      <div class="information_inner container">
+      <div class="information_inner">
         <div class="news">
           <div class="section-title section-title--left">
             <span>NEWS</span>
@@ -154,20 +155,20 @@
 
     <!-- ごあいさつ -->
     <section class="greeting">
-      <div class="greeting_inner container">
+      <div class="greeting_inner">
         <div class="section-title">
           <span>GREETING</span>
           <h2>ごあいさつ</h2>
         </div>
-        <div class="greeting_flex fade-up">
-          <div class="greeting_txt">
+        <div class="cont_flex fade-up">
+          <div class="cont_flex_txt">
             <p>当院では、患者さま一人ひとりのお悩みやご希望に丁寧に耳を傾け、安心して治療を受けていただける歯科医療を大切にしています。<br>
               「歯医者は怖い」「治療について相談しづらい」と感じている方にも、できるだけリラックスしていただけるよう、わかりやすい説明と丁寧な診療を心がけています。<br>
               また、痛みのある部分だけを治療するのではなく、将来のお口の健康まで見据えた予防・メンテナンスにも力を入れています。<br>
               地域の皆さまに「ここに来てよかった」と思っていただける歯科医院を目指し、スタッフ一同、心を込めて診療してまいります。<br>
               お口のことで気になることがございましたら、どうぞお気軽にご相談ください。</p>
           </div>
-          <div class="greeting_img">
+          <div class="cont_flex_img">
             <img src="img/doctor.webp" alt="さくらデンタルクリニックの診療室">
           </div>
         </div>
@@ -176,7 +177,7 @@
 
     <!-- 当院の特徴 -->
     <section class="feature">
-      <div class="feature_inner container">
+      <div class="feature_inner">
         <div class="section-title">
           <span>FEATURE</span>
           <h2>当院の特徴</h2>
@@ -237,6 +238,34 @@
     </div>
   </footer>
 
+  <!-- TOPへ戻る -->
+  <a href="#" class="page-top" aria-label="ページトップへ戻る">
+    <i class="fa-solid fa-chevron-up"></i>
+  </a>
+
+  <!-- SPフローティングボタン -->
+  <div class="sp-fixed-buttons">
+    <a href="tel:03-1234-5678" class="button">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-phone"></i>
+      </div>
+      <div class="text">TEL</div>
+    </a>
+    <a href="https://maps.app.goo.gl/AXpgTwd56vxicGBy7" class="button" target="_blank" rel="noopener noreferrer">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-location-dot"></i>
+      </div>
+      <div class="text">ACCESS</div>
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer" class="button" target="_blank">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-desktop"></i>
+      </div>
+      <div class="text">WEB予約</div>
+    </a>
+  </div>
+
+<script src="https://unpkg.com/scroll-hint@latest/js/scroll-hint.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 
