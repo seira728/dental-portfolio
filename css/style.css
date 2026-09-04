@@ -815,19 +815,19 @@ footer
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
-.medical_table2{
+.medical_table2 {
   border-collapse: collapse;
-  table-layout: fixed;
-  width: 100%;
+  width: 800px;
+  min-width: 800px;
 }
-.medical_table2 th{
+.medical_table2 th {
   background-color: var(--mint);
   padding: 15px;
   color: #fff;
   font-weight: 500;
   border: 1px solid #fff;
 }
-.medical_table2 td{
+.medical_table2 td {
   padding: 15px;
   border: 1px solid var(--mint);
 }
