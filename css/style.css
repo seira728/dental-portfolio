@@ -40,7 +40,7 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  align-items: stretch;
+  align-items: flex-start;
 }
 .cont_flex_txt{
   line-height: 2;
@@ -913,12 +913,9 @@ footer
 下層ページ_院長紹介
 **********************************************/
 /*略歴・所属学会*/
-.doctor_box {
-  height: 100%;
-}
+
+
 .doctor_box__inner {
-  height: 100%;
-  box-sizing: border-box;
   margin: 0 auto;
   padding: 50px;
   background-color: #fff;
