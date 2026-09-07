@@ -510,6 +510,37 @@ TOP
   margin: 0 auto;
 }
 
+/*gallery*/
+.gallery{
+  background: #eff9fc;
+}
+.top-gallery {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  padding: 100px 0;
+}
+.top-gallery-wrapper {
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+  animation: gallery-slide 50s linear infinite;
+}
+.top-gallery-img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+@keyframes gallery-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 /**********************************************
 TOPへ戻るボタン
 **********************************************/
