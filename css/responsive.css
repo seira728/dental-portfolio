@@ -177,7 +177,7 @@ TOP
   SPフローティングボタン
   **********************************************/
   body {
-    margin-bottom: 80px;
+    margin-bottom: 70px;
   }
   .sp-fixed-buttons {
     display: grid;
