@@ -457,3 +457,63 @@ if (pageTop) {
   });
 }
 
+// ========================================
+// 症例画像モーダル
+// ========================================
+
+const modalTriggers = document.querySelectorAll('.modal_trigger');
+const imageModal = document.querySelector('#imageModal');
+const modalImage = document.querySelector('#modalImage');
+const modalClose = document.querySelector('.image_modal__close');
+
+if (modalTriggers.length && imageModal) {
+
+  // 画像をクリック
+  modalTriggers.forEach((image) => {
+
+    image.addEventListener('click', () => {
+
+      modalImage.src = image.src;
+      modalImage.alt = image.alt;
+
+      imageModal.classList.add('active');
+
+      // 背景スクロールを停止
+      document.body.style.overflow = 'hidden';
+    });
+
+  });
+
+  // モーダルを閉じる
+  function closeModal() {
+    imageModal.classList.remove('active');
+
+    document.body.style.overflow = '';
+
+    // 閉じたら画像を空にする
+    setTimeout(() => {
+      modalImage.src = '';
+    }, 300);
+  }
+
+  // ×ボタン
+  modalClose.addEventListener('click', closeModal);
+
+  // 写真以外をクリックしたら閉じる
+  imageModal.addEventListener('click', (e) => {
+
+    // 写真をクリックした場合は何もしない
+    if (e.target === modalImage) {
+      return;
+    }
+
+    closeModal();
+  });
+
+  // ESCキーで閉じる
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+}

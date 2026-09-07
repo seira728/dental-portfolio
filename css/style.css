@@ -1120,6 +1120,68 @@ footer
 .case_slider__dot.active {
   background-color: var(--blue);
 }
+.modal_trigger {
+  cursor: zoom-in;
+}
+.image_modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+.image_modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+.image_modal__content {
+  position: relative;
+  max-width: 1000px;
+  max-height: 90vh;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+.image_modal.active .image_modal__content {
+  transform: scale(1);
+}
+.image_modal__image {
+  display: block;
+  max-width: 100%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.image_modal__close {
+  position: absolute;
+  top: -55px;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--blue);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--blue);
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.image_modal__close:hover {
+  background: var(--blue);
+  color: #fff;
+}
 
 /**********************************************
 下層ページ_院長紹介

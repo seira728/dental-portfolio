@@ -310,14 +310,23 @@
                   <div class="medical_section_title">
                     <h4>症例①</h4>
                   </div>
+                  <p class="mb15">画像をクリックすると拡大表示されます。</p>
                   <div class="case_photo_wrap mb30">
                     <div class="case_photo">
                       <div class="case_photo__label">BEFORE</div>
-                      <img src="img/case01_before.webp" alt="ホワイトニング前">
+                      <img
+                        src="img/case01_before.webp"
+                        alt="BEFORE"
+                        class="modal_trigger"
+                      >
                     </div>
                     <div class="case_photo">
                       <div class="case_photo__label">AFTER</div>
-                      <img src="img/case01_after.webp" alt="ホワイトニング後">
+                      <img
+                        src="img/case01_after.webp"
+                        alt="AFTER"
+                        class="modal_trigger"
+                      >
                     </div>
                   </div>
                   <table class="medical_table3">
@@ -346,14 +355,23 @@
                   <div class="medical_section_title">
                     <h4>症例②</h4>
                   </div>
+                  <p class="mb15">画像をクリックすると拡大表示されます。</p>
                   <div class="case_photo_wrap mb30">
                     <div class="case_photo">
                       <div class="case_photo__label">BEFORE</div>
-                      <img src="img/case02_before.webp" alt="ホワイトニング前">
+                      <img
+                        src="img/case02_before.webp"
+                        alt="BEFORE"
+                        class="modal_trigger"
+                      >
                     </div>
                     <div class="case_photo">
                       <div class="case_photo__label">AFTER</div>
-                      <img src="img/case02_after.webp" alt="ホワイトニング後">
+                      <img
+                        src="img/case02_after.webp"
+                        alt="AFTER"
+                        class="modal_trigger"
+                      >
                     </div>
                   </div>
                   <table class="medical_table3">
@@ -432,6 +450,24 @@
       </div>
       <div class="text">WEB予約</div>
     </a>
+  </div>
+
+  <!-- 症例モーダルウィンドウ -->
+  <div class="image_modal" id="imageModal">
+    <div class="image_modal__overlay"></div>
+
+    <div class="image_modal__content">
+      <button class="image_modal__close" type="button" aria-label="閉じる">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <img
+        src=""
+        alt=""
+        class="image_modal__image"
+        id="modalImage"
+      >
+    </div>
   </div>
 
 <script src="https://unpkg.com/scroll-hint@latest/js/scroll-hint.min.js"></script>
