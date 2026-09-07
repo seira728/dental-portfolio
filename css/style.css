@@ -36,6 +36,9 @@ a:hover {
   margin: auto;
   padding-top: 100px;
 }
+.container:last-of-type {
+  padding-bottom: 100px;
+}
 .cont_flex{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -63,6 +66,9 @@ a:hover {
 }
 .mb30{
   margin-bottom: 30px;
+}
+.mb50{
+  margin-bottom: 50px;
 }
 .sp-only-br {
   display: none;
@@ -272,11 +278,13 @@ MV
 .mv__slide.active img {
   animation: mvZoom 7s linear forwards;
 }
+.mv__slide.zoomed img {
+  transform: scale(1.08);
+}
 @keyframes mvZoom {
   from {
     transform: scale(1);
   }
-
   to {
     transform: scale(1.08);
   }
@@ -553,11 +561,8 @@ SPフローティングボタン
 /**********************************************
 footer
 **********************************************/
-.sitemap ul{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
+.footer iframe {
+  display: block;
 }
 .footer__copyright{
   background: var(--blue);
@@ -801,6 +806,7 @@ footer
   margin: 0 0 30px;
   font-size: 22px;
   font-weight: 500;
+  color: var(--deep);
 }
 .medical_section_title h4 i{
   margin-right: 10px;
@@ -867,6 +873,34 @@ footer
   color: #fff;
   font-size: 13px;
 }
+.trouble__list2 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 45px;
+  row-gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 20px;
+}
+.trouble__list2 li {
+  display: flex;
+  align-items: baseline;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.trouble__list2 li i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-color: var(--mint);
+  color: #fff;
+  font-size: 13px;
+}
 
 /*表1*/
 .medical_table1{
@@ -907,6 +941,182 @@ footer
 .medical_table2 td {
   padding: 15px;
   border: 1px solid var(--mint);
+}
+
+/*表3*/
+.medical_table3 {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+.medical_table3 th {
+  width: 20%;
+  padding: 15px;
+  background-color: var(--blue);
+  color: #fff;
+  font-weight: 500;
+  border: 1px solid #fff;
+}
+.medical_table3 td {
+  padding: 15px;
+  border: 1px solid var(--blue);
+}
+
+/*治療の流れ*/
+.step_slider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.step_slider__viewport {
+  width: 100%;
+  overflow: hidden;
+}
+.step_slider__track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+}
+.step_box {
+  flex: 0 0 calc((100% - 40px) / 3);
+  box-sizing: border-box;
+  padding: 35px 30px;
+  background-color: #fff;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+}
+.step_box__number {
+  margin: 0 auto 20px;
+  padding: 10px 30px;
+  border-radius: 50px;
+  background-color: var(--blue);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+.step_box__text {
+  font-size: 16px;
+  line-height: 2;
+}
+.step_slider__arrow {
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  border: 1px solid var(--blue);
+  border-radius: 50%;
+  background-color: #fff;
+  color: var(--blue);
+  cursor: pointer;
+}
+.step_slider__arrow:hover {
+  background-color: var(--blue);
+  color: #fff;
+}
+.step_slider__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 25px;
+}
+.step_slider__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+}
+.step_slider__dot.active {
+  background-color: var(--blue);
+}
+
+/*症例*/
+.case_slider {
+  position: relative;
+}
+.case_slider__viewport {
+  width: 100%;
+  overflow: hidden;
+}
+.case_slider__track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.case_item {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+}
+.case_photo_wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.case_photo {
+  position: relative;
+  overflow: hidden;
+}
+.case_photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.case_photo__label {
+  position: absolute;
+  z-index: 1;
+  padding: 10px 0;
+  background-color: var(--blue);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-align: center;
+  width: 100%;
+}
+.case_slider__arrow {
+  position: absolute;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  border: 1px solid var(--blue);
+  border-radius: 50%;
+  background-color: #fff;
+  color: var(--blue);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.case_slider__arrow--prev {
+  left: -20px;
+}
+.case_slider__arrow--next {
+  right: -20px;
+}
+.case_slider__arrow:hover {
+  background-color: var(--blue);
+  color: #fff;
+}
+.case_slider__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.case_slider__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+}
+.case_slider__dot.active {
+  background-color: var(--blue);
 }
 
 /**********************************************

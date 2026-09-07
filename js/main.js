@@ -34,10 +34,20 @@ if (mvSlides.length && mvDots.length) {
   let mvTimer;
 
   function showMvSlide(index) {
-    mvSlides.forEach(slide => slide.classList.remove('active'));
-    mvDots.forEach(dot => dot.classList.remove('active'));
+
+    // 現在の画像をズーム状態で固定
+    mvSlides[mvCurrent].classList.add('zoomed');
+    mvSlides[mvCurrent].classList.remove('active');
+
+    // 次の画像
+    mvSlides[index].classList.remove('zoomed');
     mvSlides[index].classList.add('active');
-    mvDots[index].classList.add('active');
+
+    // ドット
+    mvDots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+
     mvCurrent = index;
   }
 
@@ -53,12 +63,17 @@ if (mvSlides.length && mvDots.length) {
   mvDots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
       clearInterval(mvTimer);
+
       showMvSlide(index);
+
       startMvSlide();
     });
   });
 
-  showMvSlide(0);
+  // 初期状態
+  mvSlides[0].classList.add('active');
+  mvDots[0].classList.add('active');
+
   startMvSlide();
 }
 
@@ -220,6 +235,210 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ========================================
+// 治療の流れ
+// ========================================
+document.querySelectorAll('.step_slider_wrap').forEach((sliderWrap) => {
+
+  const track = sliderWrap.querySelector('.step_slider__track');
+  const boxes = sliderWrap.querySelectorAll('.step_box');
+  const prevButton = sliderWrap.querySelector('.step_slider__arrow--prev');
+  const nextButton = sliderWrap.querySelector('.step_slider__arrow--next');
+  const dotsContainer = sliderWrap.querySelector('.step_slider__dots');
+
+  let currentStep = 0;
+
+
+  // ドット作成
+  boxes.forEach((_, index) => {
+
+    const dot = document.createElement('button');
+
+    dot.classList.add('step_slider__dot');
+
+    if (index === 0) {
+      dot.classList.add('active');
+    }
+
+    dot.addEventListener('click', () => {
+      currentStep = index;
+      updateSlider();
+    });
+
+    dotsContainer.appendChild(dot);
+
+  });
+
+
+  const dots = dotsContainer.querySelectorAll('.step_slider__dot');
+
+
+  // スライダー更新
+  function updateSlider() {
+
+    const boxWidth = boxes[0].offsetWidth;
+    const gap = 20;
+
+    track.style.transform =
+      `translateX(-${currentStep * (boxWidth + gap)}px)`;
+
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle(
+        'active',
+        index === currentStep
+      );
+    });
+
+  }
+
+
+  // 次へ
+  nextButton.addEventListener('click', () => {
+
+    if (currentStep < boxes.length - 1) {
+      currentStep++;
+      updateSlider();
+    }
+
+  });
+
+
+  // 前へ
+  prevButton.addEventListener('click', () => {
+
+    if (currentStep > 0) {
+      currentStep--;
+      updateSlider();
+    }
+
+  });
+
+});
+
+// ========================================
+// 症例
+// ========================================
+document.querySelectorAll('.case_slider_wrap').forEach((sliderWrap) => {
+
+  const track = sliderWrap.querySelector('.case_slider__track');
+  const items = sliderWrap.querySelectorAll('.case_item');
+
+  const prevButton =
+    sliderWrap.querySelector('.case_slider__arrow--prev');
+
+  const nextButton =
+    sliderWrap.querySelector('.case_slider__arrow--next');
+
+  const dotsContainer =
+    sliderWrap.querySelector('.case_slider__dots');
+
+  let currentIndex = 0;
+
+
+  // ドット作成
+  items.forEach((_, index) => {
+
+    const dot = document.createElement('button');
+
+    dot.type = 'button';
+    dot.classList.add('case_slider__dot');
+
+    if (index === 0) {
+      dot.classList.add('active');
+    }
+
+    dot.addEventListener('click', () => {
+      currentIndex = index;
+      updateSlider();
+    });
+
+    dotsContainer.appendChild(dot);
+
+  });
+
+
+  const dots =
+    dotsContainer.querySelectorAll('.case_slider__dot');
+
+
+  // 矢印を写真の上下中央に配置
+  function positionArrows() {
+
+    const photoWrap =
+      items[currentIndex].querySelector('.case_photo_wrap');
+
+    if (!photoWrap) return;
+
+    const slider =
+      sliderWrap.querySelector('.case_slider');
+
+    const sliderRect =
+      slider.getBoundingClientRect();
+
+    const photoRect =
+      photoWrap.getBoundingClientRect();
+
+    const center =
+      photoRect.top +
+      photoRect.height / 2 -
+      sliderRect.top;
+
+    prevButton.style.top = `${center}px`;
+    nextButton.style.top = `${center}px`;
+
+  }
+
+
+  // スライダー更新
+  function updateSlider() {
+
+    track.style.transform =
+      `translateX(-${currentIndex * 100}%)`;
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle(
+        'active',
+        index === currentIndex
+      );
+    });
+
+    positionArrows();
+
+  }
+
+
+  // 次へ
+  nextButton.addEventListener('click', () => {
+
+    if (currentIndex < items.length - 1) {
+      currentIndex++;
+      updateSlider();
+    }
+
+  });
+
+
+  // 前へ
+  prevButton.addEventListener('click', () => {
+
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
+    }
+
+  });
+
+
+  // 初期表示時
+  positionArrows();
+
+
+  // 画面サイズ変更時
+  window.addEventListener('resize', positionArrows);
+
+});
+
+// ========================================
 // トップへ戻るボタン
 // ========================================
 const pageTop = document.querySelector('.page-top');
@@ -237,3 +456,4 @@ if (pageTop) {
     });
   });
 }
+

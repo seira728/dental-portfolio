@@ -235,9 +235,6 @@ TOP
   }
 
   /*お悩み*/
-  .trouble {
-    padding: 15px;
-  }
   .trouble__inner {
     padding: 50px 30px;
     border-radius: 30px;
@@ -262,6 +259,53 @@ TOP
   /*表2*/
   .medical_table2 {
     width: 768px;
+  }
+
+  /*表3*/
+  .medical_table3 tr {
+    display: block;
+  }
+  .medical_table3 th {
+    display: block;
+    width: auto;
+    border: none;
+  }
+  .medical_table3 td {
+    display: block;
+  }
+
+  /*治療の流れ*/
+  .step_slider {
+    gap: 10px;
+  }
+  .step_box {
+    flex: 0 0 100%;
+    padding: 30px 25px;
+  }
+  .step_box__number {
+    margin-bottom: 15px;
+  }
+  .step_box__text {
+    font-size: 15px;
+  }
+  .step_slider__arrow {
+    width: 38px;
+    height: 38px;
+  }
+
+  /*症例*/
+  .case_slider {
+    gap: 10px;
+  }
+  .case_photo_wrap {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .case_slider__arrow--prev {
+  left: -15px;
+  }
+  .case_slider__arrow--next {
+    right: -15px;
   }
 
   /**********************************************
