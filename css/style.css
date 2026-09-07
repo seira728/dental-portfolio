@@ -135,13 +135,13 @@ header
   margin: 0;
 }
 .header__logo img{
-  max-width: 150px;
+  max-width: 130px;
 }
 .header__nav > ul{
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
 }
 .header__nav li{
   list-style-type: none;
@@ -168,10 +168,13 @@ header
   transform: scaleX(1);
 }
 .Web_reserve{
-  padding: 18px 27px;
+  padding: 15px;
   background: var(--blue);
   color: #fff !important;
   border-radius: 5px;
+}
+.Web_reserve i{
+  padding-right: 5px;
 }
 /*ドロップダウンメニュー*/
 .header_link--dropdown {
@@ -521,11 +524,10 @@ SPフローティングボタン
 .sp-fixed-buttons {
 	display: none;
 	width: 100%;
-	height: 80px;
+	height: 70px;
 	position: fixed;
 	z-index: 9999;
 	bottom: 0;
-	/* display: grid; */
 	grid-template-columns: repeat(3, 1fr);
 }
 .sp-fixed-buttons .button {
