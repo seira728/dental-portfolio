@@ -516,13 +516,13 @@ TOP
 
 /*gallery*/
 .gallery{
-  background: #EFF9FC;
+  background: #F8FAFA;
 }
 .top-gallery {
   display: flex;
   overflow: hidden;
   width: 100%;
-  padding: 100px 0 0;
+  padding: 100px 0;
 }
 .top-gallery-wrapper {
   display: flex;
