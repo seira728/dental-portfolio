@@ -100,112 +100,162 @@ if (targets.length) {
 // ========================================
 // 当院について＿カルーセル
 // ========================================
-const carouselContainer = document.querySelector('.carousel__slides');
-const carouselDots = document.querySelectorAll('.carousel__dot');
-const carouselPrevButton = document.querySelector('.carousel__button--prev');
-const carouselNextButton = document.querySelector('.carousel__button--next');
+const carousels = document.querySelectorAll('.carousel');
 
-if (carouselContainer && carouselDots.length && carouselPrevButton && carouselNextButton) {
-  let carouselSlides = document.querySelectorAll('.carousel__slide');
+carousels.forEach((carousel) => {
+  const carouselContainer = carousel.querySelector('.carousel__slides');
+  const carouselDots = carousel.querySelectorAll('.carousel__dot');
+  const carouselPrevButton = carousel.querySelector('.carousel__button--prev');
+  const carouselNextButton = carousel.querySelector('.carousel__button--next');
+
+  if (
+    !carouselContainer ||
+    !carouselDots.length ||
+    !carouselPrevButton ||
+    !carouselNextButton
+  ) {
+    return;
+  }
+
+  let carouselSlides = carouselContainer.querySelectorAll('.carousel__slide');
   const carouselCount = carouselSlides.length;
+
   let carouselCurrent = 0;
   let carouselTimer;
   let isAnimating = false;
 
-  if (carouselCount > 1) {
-    const firstSlideClone = carouselSlides[0].cloneNode(true);
-    carouselContainer.appendChild(firstSlideClone);
-    carouselSlides = document.querySelectorAll('.carousel__slide');
+  if (carouselCount <= 1) return;
 
-    function moveCarousel(animate = true) {
-      carouselContainer.style.transition = animate
-        ? 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
-        : 'none';
-      carouselContainer.style.transform = `translateX(-${carouselCurrent * 100}%)`;
+  // 最初のスライドを複製
+  const firstSlideClone = carouselSlides[0].cloneNode(true);
+  carouselContainer.appendChild(firstSlideClone);
+  carouselSlides = carouselContainer.querySelectorAll('.carousel__slide');
 
-      carouselDots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === carouselCurrent % carouselCount);
-      });
-    }
+  // ========================================
+  // カルーセル移動
+  // ========================================
 
-    function nextCarousel() {
-      if (isAnimating) return;
+  function moveCarousel(animate = true) {
+    carouselContainer.style.transition = animate
+      ? 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
+      : 'none';
 
-      isAnimating = true;
-      carouselCurrent++;
-      moveCarousel(true);
+    carouselContainer.style.transform = `translateX(-${carouselCurrent * 100}%)`;
 
-      if (carouselCurrent === carouselCount) {
-        setTimeout(() => {
-          carouselCurrent = 0;
-          moveCarousel(false);
-          isAnimating = false;
-        }, 800);
-      } else {
-        setTimeout(() => {
-          isAnimating = false;
-        }, 800);
-      }
-    }
+    // ドット更新
+    carouselDots.forEach((dot, index) => {
+      dot.classList.toggle(
+        'active',
+        index === carouselCurrent % carouselCount
+      );
+    });
+  }
 
-    function prevCarousel() {
-      if (isAnimating) return;
+  // ========================================
+  // 次へ
+  // ========================================
 
-      isAnimating = true;
+  function nextCarousel() {
+    if (isAnimating) return;
 
-      if (carouselCurrent === 0) {
-        carouselCurrent = carouselCount;
+    isAnimating = true;
+    carouselCurrent++;
+    moveCarousel(true);
+
+    // 最後のクローンまで到達したら最初へ戻す
+    if (carouselCurrent === carouselCount) {
+      setTimeout(() => {
+        carouselCurrent = 0;
         moveCarousel(false);
-
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            carouselCurrent = carouselCount - 1;
-            moveCarousel(true);
-          });
-        });
-      } else {
-        carouselCurrent--;
-        moveCarousel(true);
-      }
-
+        isAnimating = false;
+      }, 800);
+    } else {
       setTimeout(() => {
         isAnimating = false;
       }, 800);
     }
+  }
 
-    function startCarousel() {
-      carouselTimer = setInterval(nextCarousel, 5000);
-    }
+  // ========================================
+  // 前へ
+  // ========================================
 
-    function restartCarousel() {
-      clearInterval(carouselTimer);
-      startCarousel();
-    }
+  function prevCarousel() {
+    if (isAnimating) return;
 
-    carouselNextButton.addEventListener('click', () => {
-      nextCarousel();
-      restartCarousel();
-    });
+    isAnimating = true;
 
-    carouselPrevButton.addEventListener('click', () => {
-      prevCarousel();
-      restartCarousel();
-    });
+    if (carouselCurrent === 0) {
+      // 一旦クローンの位置へ移動
+      carouselCurrent = carouselCount;
+      moveCarousel(false);
 
-    carouselDots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        if (isAnimating || index === carouselCurrent % carouselCount) return;
-
-        carouselCurrent = index;
-        moveCarousel(true);
-        restartCarousel();
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          carouselCurrent = carouselCount - 1;
+          moveCarousel(true);
+        });
       });
-    });
+    } else {
+      carouselCurrent--;
+      moveCarousel(true);
+    }
 
-    moveCarousel(false);
+    setTimeout(() => {
+      isAnimating = false;
+    }, 800);
+  }
+
+  // ========================================
+  // 自動再生
+  // ========================================
+
+  function startCarousel() {
+    carouselTimer = setInterval(nextCarousel, 5000);
+  }
+
+  function restartCarousel() {
+    clearInterval(carouselTimer);
     startCarousel();
   }
-}
+
+  // ========================================
+  // ボタン
+  // ========================================
+
+  carouselNextButton.addEventListener('click', () => {
+    nextCarousel();
+    restartCarousel();
+  });
+
+  carouselPrevButton.addEventListener('click', () => {
+    prevCarousel();
+    restartCarousel();
+  });
+
+  // ========================================
+  // ドット
+  // ========================================
+
+  carouselDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      if (
+        isAnimating ||
+        index === carouselCurrent % carouselCount
+      ) {
+        return;
+      }
+
+      carouselCurrent = index;
+      moveCarousel(true);
+      restartCarousel();
+    });
+  });
+
+  // 初期状態
+  moveCarousel(false);
+  startCarousel();
+});
 
 // ========================================
 // 当院について＿よくある質問
