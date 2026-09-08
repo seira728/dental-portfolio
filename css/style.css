@@ -15,6 +15,7 @@
 body {
   margin: 0;
   font-family: sans-serif;
+  color: #333;
 }
 a {
   text-decoration: none;
@@ -347,7 +348,7 @@ TOP
 **********************************************/
 /*information*/
 .information{
-  background: #eff9fc;
+  background: #EFF9FC;
 }
 .information_inner{
   display: grid;
@@ -441,7 +442,7 @@ TOP
 
 /*feature*/
 .feature{
-  background: #fcfaef;
+  background: #FBF9EF;
 }
 .feature_inner{
   padding: 100px 0;
@@ -509,16 +510,19 @@ TOP
   width: 30%;
   margin: 0 auto;
 }
+.medical_item span{
+  font-size: 12px;
+}
 
 /*gallery*/
 .gallery{
-  background: #eff9fc;
+  background: #EFF9FC;
 }
 .top-gallery {
   display: flex;
   overflow: hidden;
   width: 100%;
-  padding: 100px 0;
+  padding: 100px 0 0;
 }
 .top-gallery-wrapper {
   display: flex;
@@ -618,6 +622,35 @@ SPフローティングボタン
 /**********************************************
 footer
 **********************************************/
+.footer{
+  background: #EFF9FC;
+}
+.footer__inner{
+  padding: 100px 0 50px;
+  width: min(1160px, calc(100% - 48px));
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+.footer_left img{
+  max-width: 200px;
+  margin: 0 auto 30px;
+}
+.footer_left_button{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  justify-content: center;
+}
+.footer_left_button > a {
+  width: 200px;
+  margin: 0 auto;
+}
+.footer_left_button .button_item{
+  font-size: 16px;
+}
 .footer iframe {
   display: block;
 }
@@ -746,10 +779,8 @@ footer
 /*よくある質問*/
 .faq {
   background: #f7f9f8;
-  padding-bottom: 100px;
 }
 .faq__inner {
-  max-width: 900px;
   margin: 0 auto;
 }
 .faq__list {

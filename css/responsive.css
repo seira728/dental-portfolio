@@ -182,6 +182,18 @@ TOP
   .sp-fixed-buttons {
     display: grid;
   }
+
+  /**********************************************
+  footer
+  **********************************************/
+  .footer__inner{
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .footer_left_button{
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -201,7 +213,7 @@ TOP
   /**********************************************
   TOP
   **********************************************/
-    /*feature*/
+  /*feature*/
   .feature_items{
     grid-template-columns: 1fr;
   }
