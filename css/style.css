@@ -529,6 +529,7 @@ TOP
   gap: 20px;
   flex-shrink: 0;
   animation: gallery-slide 50s linear infinite;
+  margin-right: 20px;
 }
 .top-gallery-img {
   width: 300px;
