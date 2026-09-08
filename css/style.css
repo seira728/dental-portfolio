@@ -166,10 +166,12 @@ header
   transform: scaleX(1);
 }
 .Web_reserve{
-  padding: 15px;
   background: var(--blue);
   color: #fff !important;
   border-radius: 5px;
+}
+.Web_reserve .button_item{
+  font-size: 16px;
 }
 .Web_reserve i{
   padding-right: 5px;
