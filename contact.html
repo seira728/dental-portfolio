@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>さくらデンタルクリニック</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="preload" as="image" href="img/mv01.jpg">
+  <link rel="preload" as="image" href="img/mv02.jpg">
+  <link rel="preload" as="image" href="img/mv03.jpg">
+  <link rel="stylesheet" href="https://unpkg.com/scroll-hint@latest/css/scroll-hint.css">
+</head>
+
+<body>
+
+  <!------------ ヘッダー ------------>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <h1>
+          <img src="img/logo.png" alt="さくらデンタルクリニック">
+        </h1>
+      </a>
+      <!-- PC用ナビ -->
+      <nav class="header__nav">
+        <ul>
+          <li class="header_link"><a href="index.html">ホーム</a></li>
+          <li class="header_link"><a href="about.html">当院について</a></li>
+          <li class="header_link header_link--dropdown">
+            <span class="dropdown-toggle">診療案内</span>
+            <ul class="dropdown-menu">
+              <li><a href="general.html">一般歯科</a></li>
+              <li><a href="perio.html">歯周病治療</a></li>
+              <li><a href="cosme.html">詰め物・被せ物</a></li>
+              <li><a href="whitening.html">ホワイトニング</a></li>
+            </ul>
+          </li>
+          <li class="header_link"><a href="doctor.html">院長紹介</a></li>
+          <li class="header_link"><a href="contact.html">お問い合わせ</a></li>
+          <li class="Web_reserve"><a href="03-1234-5678"><div class="center fade-up button_item is-visible"><i class="fa-solid fa-phone"></i>03-1234-5678</div></a></li>
+          <li class="Web_reserve"><a href="#"><div class="center fade-up button_item is-visible"><i class="fa-solid fa-desktop"></i>WEB予約</div></a></li>
+        </ul>
+      </nav>
+      <!-- ハンバーガーボタン -->
+      <button class="hamburger" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <!-- スマホ用メニュー -->
+    <nav class="sp-nav">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="about.html">当院について</a></li>
+        <li class="sp-nav__dropdown">
+          <button type="button" class="sp-nav__toggle">
+            診療案内
+            <span class="sp-nav__arrow"></span>
+          </button>
+          <ul class="sp-nav__submenu">
+            <li><a href="general.html">一般歯科</a></li>
+            <li><a href="perio.html">歯周病治療</a></li>
+            <li><a href="cosme.html">詰め物・被せ物</a></li>
+            <li><a href="whitening.html">ホワイトニング</a></li>
+          </ul>
+        </li>
+        <li><a href="doctor.html">院長紹介</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!------------ 下層MV ------------>
+    <section class="sub_mv">
+      <div class="sub_mv_container">
+        <span>CONTACT</span><h2>お問い合わせ</h2>
+      </div>
+    </section>
+
+    <!------------ お問い合わせフォーム ------------>
+    <section id="contact01" class="container">
+      <div class="section-title">
+        <span>CONTACT</span>
+        <h2>お問い合わせ<br class="sp-only-br">フォーム</h2>
+      </div>
+      <p class="contact_lead mb50">
+        治療に関することなど、ご不安なことがございましたら、まずはお気軽にお問い合わせください。
+      </p>
+      <form id="contactForm" novalidate>
+        <div class="form_item">
+          <div class="form_label">
+            <label>お問い合わせ内容</label>
+            <span class="required">必須</span>
+          </div>
+          <div class="form_content">
+            <div class="radio_group">
+              <label>
+                <input type="radio" name="category" value="治療について">
+                <span>治療について</span>
+              </label>
+              <label>
+                <input type="radio" name="category" value="採用について">
+                <span>採用について</span>
+              </label>
+              <label>
+                <input type="radio" name="category" value="その他・ご意見など">
+                <span>その他・ご意見など</span>
+              </label>
+            </div>
+            <p class="error_message"></p>
+          </div>
+        </div>
+        <div class="form_item">
+          <div class="form_label">
+            <label for="name">お名前</label>
+            <span class="required">必須</span>
+          </div>
+          <div class="form_content">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="例：山田 太郎"
+            >
+            <p class="error_message"></p>
+          </div>
+        </div>
+        <div class="form_item">
+          <div class="form_label">
+            <label for="kana">ふりがな</label>
+            <span class="required">必須</span>
+          </div>
+          <div class="form_content">
+            <input
+              type="text"
+              id="kana"
+              name="kana"
+              placeholder="例：やまだ たろう"
+            >
+            <p class="error_message"></p>
+          </div>
+        </div>
+        <div class="form_item">
+          <div class="form_label">
+            <label for="email">メールアドレス</label>
+            <span class="required">必須</span>
+          </div>
+          <div class="form_content">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="例：sample@sample.com"
+            >
+            <p class="error_message"></p>
+          </div>
+        </div>
+        <div class="form_item">
+          <div class="form_label">
+            <label for="emailConfirm">メールアドレス（確認）</label>
+            <span class="required">必須</span>
+          </div>
+          <div class="form_content">
+            <input
+              type="email"
+              id="emailConfirm"
+              name="emailConfirm"
+              placeholder="例：sample@sample.com"
+            >
+            <p class="error_message"></p>
+          </div>
+        </div>
+        <div class="form_item">
+          <div class="form_label">
+            <label for="tel">電話番号</label>
+            <span class="required">必須</span>
+          </div>
+          <div class="form_content">
+            <input
+              type="tel"
+              id="tel"
+              name="tel"
+              placeholder="例：090-1234-5678"
+            >
+            <p class="error_message"></p>
+          </div>
+        </div>
+        <div class="form_item form_item_textarea">
+          <div class="form_label">
+            <label for="message">お問い合わせ内容</label>
+            <span class="required">必須</span>
+          </div>
+          <div class="form_content">
+            <textarea
+              id="message"
+              name="message"
+              placeholder="お問い合わせ内容をご入力ください"
+            ></textarea>
+            <p class="error_message"></p>
+          </div>
+        </div>
+        <div class="contact_notice">
+          <p>お問い合わせいただきますと、受付完了の自動返信メールをお送りしております。
+          あらかじめ、◯◯@gmail.comからのメールを受信できるよう設定をお願いいたします。<br>
+          お問い合わせの内容によっては、ご回答までにお時間をいただく場合がございます。<br>
+          なお、ご予約・変更・キャンセルに関するお問い合わせはフォームでは受け付けておりません。
+          恐れ入りますが、クリニックまで直接お電話にてご連絡ください。</p>
+        </div>
+        <div class="privacy_box">
+          <h3>プライバシーポリシー</h3>
+          <div class="privacy_text">
+            <p>さくらデンタルクリニック（以下、「当院」といいます。）は、当院のWebサイトをご利用いただく皆さまの個人情報を適切に保護することを重要な責務と考え、以下のとおりプライバシーポリシーを定めます。</p>
+            <h4>【1. 個人情報の取得方法】</h4>
+            <p>当院は、Webサイトのお問い合わせフォーム等を通じて、お名前、メールアドレス、電話番号などの個人情報をご提供いただく場合があります。<br>個人情報を取得する際には、あらかじめ利用目的を明示し、その目的の達成に必要な範囲で適切に取得いたします。</p>
+            <h4>【2. 個人情報の利用目的】</h4>
+            <p>当院は、取得した個人情報を以下の目的のために利用いたします。<br>・お問い合わせやご相談に対する回答およびご連絡のため<br>・診療に関するご案内やご連絡のため<br>・採用に関するお問い合わせへの対応および採用選考のため<br>・当院のサービス向上およびWebサイト改善のため<br>・その他、上記利用目的に付随する業務のため</p>
+            <h4>【3. 個人情報の安全管理】</h4>
+            <p>当院は、取得した個人情報について、漏えい、紛失、改ざん、不正アクセス等を防止するため、適切な安全管理措置を講じます。<br>また、個人情報を取り扱う従業者に対して必要な教育・研修を行い、個人情報の適切な管理に努めます。</p>
+            <h4>【4. 個人情報の第三者提供について】</h4>
+            <p>当院は、以下の場合を除き、ご本人の同意なく個人情報を第三者に提供することはありません。<br>1．ご本人の同意がある場合<br>2．法令に基づく場合<br>3．人の生命、身体または財産の保護のために必要があり、ご本人の同意を得ることが困難な場合<br>4．その他、法令により認められている場合<br>なお、業務の遂行に必要な範囲で個人情報の取り扱いを外部に委託する場合には、委託先に対して必要かつ適切な監督を行います。</p>
+            <h4>【5. 個人情報の開示・訂正・削除等について】</h4>
+            <p>当院は、ご本人から個人情報の開示、訂正、追加、削除、利用停止等のお申し出があった場合、法令に従い適切に対応いたします。<br>ご希望の方は、下記のお問い合わせ窓口までご連絡ください。</p>
+            <h4>【6. お問い合わせ窓口】</h4>
+            <p>当院の個人情報の取り扱いに関するご質問、ご相談、苦情等につきましては、下記のお問い合わせ窓口までご連絡ください。</p>
+            <h4>【7. SSL（Secure Socket Layer）について】</h4>
+            <p>当院のWebサイトでは、個人情報を入力いただくページにおいて、SSLによる通信の暗号化を行っています。<br>これにより、WebブラウザとWebサーバー間で送受信される情報を保護しています。</p>
+            <h4>【8. Cookie（クッキー）の使用について】</h4>
+            <p>当院のWebサイトでは、利用者の利便性向上やWebサイトの利用状況を把握するため、Cookie（クッキー）を使用する場合があります。<br>Cookieとは、Webサイトを閲覧した際に、利用者のブラウザに保存される情報です。<br>Cookieには、個人を特定できる情報は含まれておりません。<br>利用者は、ブラウザの設定によりCookieの使用を無効にすることができます。ただし、Cookieを無効にした場合、一部のWebサイトの機能が正常に利用できない場合があります。</p>
+            <h4>【9. アクセス解析ツールについて】</h4>
+            <p>当院のWebサイトでは、Webサイトの利用状況を把握し、サービスやコンテンツの改善を行うため、Google Analytics等のアクセス解析ツールを利用する場合があります。<br>Google Analyticsでは、Cookieを利用して利用者の情報を収集することがありますが、個人を特定する情報は収集されません。<br>Googleによるデータの取り扱いについては、Googleのプライバシーポリシーをご確認ください。</p>
+            <h4>【10. 免責事項】</h4>
+            <p>当院は、Webサイトに掲載する情報について可能な限り正確な情報を提供するよう努めていますが、その内容の正確性や完全性を保証するものではありません。<br>当院Webサイトの利用により生じた損害について、当院に故意または重大な過失がある場合を除き、当院は責任を負いかねます。</p>
+            <h4>【11. 著作権・肖像権について】</h4>
+            <p>当院Webサイトに掲載されている文章、画像、ロゴ、その他すべてのコンテンツは、著作権、商標権、肖像権等により保護されています。<br>無断での転載、複製、改変、二次利用等を禁止いたします。</p>
+            <h4>【お問い合わせ窓口】</h4>
+            <p>さくらデンタルクリニック<br>〒000-0000 <br class="sp-only-br">東京都○○市○○町1-2-3<br>TEL：03-1234-5678</p>
+          </div>
+        </div>
+        <div class="privacy_agree">
+          <label>
+            <input type="checkbox" id="privacy" name="privacy">
+            <span>個人情報の取り扱いに同意する</span>
+          </label>
+          <p class="error_message"></p>
+        </div>
+        <div class="form_submit">
+          <button type="submit">
+            <span>入力内容のご確認</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer_left">
+        <img src="img/logo.png" alt="さくらデンタルクリニック">
+        <p class="center mb30">〒000-0000 東京都○○市○○町1-2-3</p>
+        <div class="footer_left_button">
+          <a href="03-1234-5678"><div class="center button_item"><i class="fa-solid fa-phone"></i>03-1234-5678</div></a>
+          <a href="#"><div class="center button_item"><i class="fa-solid fa-desktop"></i>WEB予約</div></a>
+        </div>
+      </div>
+      <div class="footer_right">
+        <div class="hours">
+          <span>診療時間</span>
+          <b>月</b><b>火</b><b>水</b><b>木</b><b>金</b><b>土</b><b>日</b>
+          <span>09:00〜13:00</span><i>●</i><i>●</i><i>●</i><i>／</i><i>●</i><i>●</i><i>／</i>
+          <span>14:30〜18:30</span><i>●</i><i>●</i><i>●</i><i>／</i><i>●</i><i>●</i><i>／</i>
+        </div>
+        <p class="mt15">※休診：木曜・日曜・祝日</p>
+      </div>
+    </div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.8254544793112!2d139.76255968885494!3d35.6812996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1788267444223!5m2!1sja!2sjp"
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin">
+    </iframe>
+    <p class="footer__copyright">
+      &copy; 2026 さくらデンタルクリニック
+    </p>
+  </footer>
+
+  <!-- TOPへ戻る -->
+  <a href="#" class="page-top" aria-label="ページトップへ戻る">
+    <i class="fa-solid fa-chevron-up"></i>
+  </a>
+
+  <!-- SPフローティングボタン -->
+  <div class="sp-fixed-buttons">
+    <a href="tel:03-1234-5678" class="button">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-phone"></i>
+      </div>
+      <div class="text">TEL</div>
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer" class="button" target="_blank">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-desktop"></i>
+      </div>
+      <div class="text">WEB予約</div>
+    </a>
+    <a href="https://maps.app.goo.gl/AXpgTwd56vxicGBy7" class="button" target="_blank" rel="noopener noreferrer">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-location-dot"></i>
+      </div>
+      <div class="text">ACCESS</div>
+    </a>
+  </div>
+
+<script src="https://unpkg.com/scroll-hint@latest/js/scroll-hint.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>

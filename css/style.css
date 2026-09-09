@@ -52,7 +52,6 @@ p{
 .cont_flex_img img{
   width: 100%;
 }
-
 .center{
   text-align: center;
 }
@@ -1343,4 +1342,212 @@ footer
 /*インタビュー*/
 #doctor03{
   background: #FBF9EF;
+}
+
+/**********************************************
+下層ページ_お問い合わせ
+**********************************************/
+.contact_lead {
+  text-align: center;
+}
+.form_item {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  margin-bottom: 0;
+}
+.form_label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 15px;
+  background: var(--mint);
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+.form_label label {
+  font-weight: 500;
+  text-align: center;
+}
+.required {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 38px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 5px;
+  background: #e56b6f;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.form_content {
+  padding: 15px 20px;
+  background: #fff;
+  border-top: 1px solid var(--mint);
+  border-right: 1px solid var(--mint);
+}
+.form_content:last-of-type {
+  border-bottom: 1px solid var(--mint);
+}
+.form_content input[type="text"],
+.form_content input[type="email"],
+.form_content input[type="tel"],
+.form_content textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.form_content input[type="text"],
+.form_content input[type="email"],
+.form_content input[type="tel"] {
+  height: 40px;
+}
+.form_content textarea {
+  height: 180px;
+  resize: vertical;
+}
+.form_content input:focus,
+.form_content textarea:focus {
+  border-color: var(--blue);
+}
+.form_content input::placeholder,
+.form_content textarea::placeholder {
+  color: #bbb;
+}
+.radio_group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 20px;
+  min-height: 40px;
+}
+.radio_group label {
+  display: flex;
+  align-items: stretch;
+  gap: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.error_message {
+  display: none;
+  margin: 7px 0 0;
+  color: #d9534f;
+  font-size: 12px;
+}
+.form_content.error input,
+.form_content.error textarea {
+  border-color: #d9534f;
+  background: #fff8f8;
+}
+.form_content.error .error_message {
+  display: block;
+}
+.contact_notice {
+  margin: 50px auto;
+  padding: 25px 30px;
+  background: #FBF9EF;
+}
+.privacy_box {
+  margin: 0 auto;
+  padding: 25px 30px;
+  background: #FBF9EF;
+}
+.privacy_box h3 {
+  margin: 0 0 25px;
+  color: var(--deep);
+  font-size: 18px;
+}
+.privacy_text {
+  height: 190px;
+  overflow-y: auto;
+  padding-right: 15px;
+  line-height: 2;
+  color: #444;
+}
+.privacy_text h4 {
+  margin: 25px 0 8px;
+  font-size: 16px;
+}
+.privacy_text::-webkit-scrollbar {
+  width: 8px;
+}
+.privacy_text::-webkit-scrollbar-track {
+  background: #eee;
+}
+.privacy_text::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 10px;
+}
+.privacy_agree {
+  margin: 30px 0;
+  text-align: center;
+}
+.privacy_agree label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.privacy_agree input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+}
+.privacy_agree input[type="checkbox"]:checked {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+.privacy_agree input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+}
+.form_submit {
+  display: flex;
+  justify-content: center;
+}
+.form_submit button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 55px;
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+  background: var(--blue);
+  color: #fff;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.form_submit button:hover {
+  opacity: 0.8;
+}
+.form_submit i {
+  font-size: 16px;
 }

@@ -337,4 +337,21 @@ TOP
   .doctor_box__inner {
     padding: 40px 20px;
   }
+  /**********************************************
+  下層ページ_お問い合わせ
+  **********************************************/
+  .contact_lead{
+    text-align: left;
+  }
+  .form_item {
+    grid-template-columns: 1fr;
+  }
+  .form_label{
+    border-bottom: none;
+    padding: 15px;
+  }
+  .form_content{
+    border-left: 1px solid var(--mint);
+    padding: 15px;
+  }
 }

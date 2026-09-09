@@ -567,3 +567,265 @@ if (modalTriggers.length && imageModal) {
     }
   });
 }
+
+// ========================================
+// お問い合わせフォーム
+// ========================================
+
+const contactForm = document.querySelector('#contactForm');
+
+if (contactForm) {
+
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    let isValid = true;
+
+    // ========================================
+    // エラーをリセット
+    // ========================================
+
+    document.querySelectorAll('.form_content').forEach(item => {
+      item.classList.remove('error');
+
+      const error = item.querySelector('.error_message');
+
+      if (error) {
+        error.textContent = '';
+      }
+    });
+
+    document.querySelector('.privacy_agree').classList.remove('error');
+
+    const privacyError =
+      document.querySelector('.privacy_agree .error_message');
+
+    privacyError.textContent = '';
+
+    // ========================================
+    // お問い合わせ内容
+    // ========================================
+
+    const category =
+      document.querySelector('input[name="category"]:checked');
+
+    const categoryError =
+      document
+        .querySelector('input[name="category"]')
+        .closest('.form_content')
+        .querySelector('.error_message');
+
+    if (!category) {
+      categoryError.textContent =
+        'お問い合わせ内容を選択してください。';
+
+      categoryError.parentElement.classList.add('error');
+
+      isValid = false;
+    }
+
+    // ========================================
+    // お名前
+    // ========================================
+
+    const name =
+      document.querySelector('#name');
+
+    if (name.value.trim() === '') {
+      const parent = name.closest('.form_content');
+
+      parent.classList.add('error');
+
+      parent.querySelector('.error_message').textContent =
+        'お名前を入力してください。';
+
+      isValid = false;
+    }
+
+    // ========================================
+    // ふりがな
+    // ========================================
+
+    const kana =
+      document.querySelector('#kana');
+
+    if (kana.value.trim() === '') {
+      const parent = kana.closest('.form_content');
+
+      parent.classList.add('error');
+
+      parent.querySelector('.error_message').textContent =
+        'ふりがなを入力してください。';
+
+      isValid = false;
+    }
+
+    // ========================================
+    // メールアドレス
+    // ========================================
+
+    const email =
+      document.querySelector('#email');
+
+    const emailParent =
+      email.closest('.form_content');
+
+    if (email.value.trim() === '') {
+      emailParent.classList.add('error');
+
+      emailParent.querySelector('.error_message').textContent =
+        'メールアドレスを入力してください。';
+
+      isValid = false;
+
+    } else if (!isValidEmail(email.value)) {
+      emailParent.classList.add('error');
+
+      emailParent.querySelector('.error_message').textContent =
+        '正しいメールアドレスを入力してください。';
+
+      isValid = false;
+    }
+
+    // ========================================
+    // メールアドレス確認
+    // ========================================
+
+    const emailConfirm =
+      document.querySelector('#emailConfirm');
+
+    const emailConfirmParent =
+      emailConfirm.closest('.form_content');
+
+    if (emailConfirm.value.trim() === '') {
+      emailConfirmParent.classList.add('error');
+
+      emailConfirmParent.querySelector('.error_message').textContent =
+        'メールアドレスを再入力してください。';
+
+      isValid = false;
+
+    } else if (email.value !== emailConfirm.value) {
+      emailConfirmParent.classList.add('error');
+
+      emailConfirmParent.querySelector('.error_message').textContent =
+        'メールアドレスが一致していません。';
+
+      isValid = false;
+    }
+
+    // ========================================
+    // 電話番号
+    // ========================================
+
+    const tel =
+      document.querySelector('#tel');
+
+    const telParent =
+      tel.closest('.form_content');
+
+    if (tel.value.trim() === '') {
+      telParent.classList.add('error');
+
+      telParent.querySelector('.error_message').textContent =
+        '電話番号を入力してください。';
+
+      isValid = false;
+
+    } else if (!isValidTel(tel.value)) {
+      telParent.classList.add('error');
+
+      telParent.querySelector('.error_message').textContent =
+        '正しい電話番号を入力してください。';
+
+      isValid = false;
+    }
+
+    // ========================================
+    // お問い合わせ内容詳細
+    // ========================================
+
+    const message =
+      document.querySelector('#message');
+
+    const messageParent =
+      message.closest('.form_content');
+
+    if (message.value.trim() === '') {
+      messageParent.classList.add('error');
+
+      messageParent.querySelector('.error_message').textContent =
+        'お問い合わせ内容を入力してください。';
+
+      isValid = false;
+    }
+
+    // ========================================
+    // プライバシーポリシー
+    // ========================================
+
+    const privacy =
+      document.querySelector('#privacy');
+
+    const privacyParent =
+      document.querySelector('.privacy_agree');
+
+    if (!privacy.checked) {
+      privacyParent.classList.add('error');
+
+      privacyError.textContent =
+        '個人情報の取り扱いに同意してください。';
+
+      isValid = false;
+    }
+
+    // ========================================
+    // エラーがある場合
+    // ========================================
+
+    if (!isValid) {
+      const firstError =
+        document.querySelector('.error');
+
+      if (firstError) {
+        firstError.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }
+
+      return;
+    }
+
+    // ========================================
+    // 全項目OK
+    // ========================================
+
+    alert('入力内容をご確認ください。');
+
+    // ここで確認画面へ移動
+    // window.location.href = 'confirm.html';
+  });
+
+  // ========================================
+  // メールアドレスチェック
+  // ========================================
+
+  function isValidEmail(email) {
+    const pattern =
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    return pattern.test(email);
+  }
+
+  // ========================================
+  // 電話番号チェック
+  // ========================================
+
+  function isValidTel(tel) {
+    const pattern =
+      /^[0-9０-９ー\-+\s()（）]{10,15}$/;
+
+    return pattern.test(tel);
+  }
+}
