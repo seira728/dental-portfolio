@@ -3,7 +3,6 @@
 // ========================================
 const hamburger = document.querySelector('.hamburger');
 const spNav = document.querySelector('.sp-nav');
-
 if (hamburger && spNav) {
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
@@ -14,14 +13,14 @@ if (hamburger && spNav) {
 // ========================================
 // スマホ 診療案内アコーディオン
 // ========================================
-const spDropdown = document.querySelector('.sp-nav__dropdown');
-const spDropdownToggle = document.querySelector('.sp-nav__toggle');
-
-if (spDropdown && spDropdownToggle) {
-  spDropdownToggle.addEventListener('click', () => {
-    spDropdown.classList.toggle('active');
+const spDropdowns = document.querySelectorAll('.sp-nav__dropdown');
+spDropdowns.forEach(dropdown => {
+  const toggle = dropdown.querySelector('.sp-nav__toggle');
+  if (!toggle) return;
+  toggle.addEventListener('click', () => {
+    dropdown.classList.toggle('active');
   });
-}
+});
 
 // ========================================
 // MV
