@@ -92,9 +92,21 @@
     color: #333;
     font: inherit;
     cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
   }
-  .sp-nav__toggle:hover {
-    opacity: 0.5;
+  @media (hover: hover) {
+    .sp-nav__toggle:hover {
+      opacity: 0.5;
+    }
+  }
+  .sp-nav__toggle:focus,
+  .sp-nav__toggle:focus-visible,
+  .sp-nav__toggle:active {
+    background: transparent;
+    outline: none;
   }
   .sp-nav__arrow {
     position: absolute;
