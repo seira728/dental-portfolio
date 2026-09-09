@@ -509,7 +509,10 @@ TOP
 }
 .medical_item img{
   width: 30%;
-  margin: 0 auto;
+  margin: 0 auto 10px;
+}
+.medical_item p{
+  line-height: 1.2;
 }
 .medical_item span{
   font-size: 12px;
