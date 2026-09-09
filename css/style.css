@@ -1,14 +1,15 @@
 @charset "UTF-8";
 
 :root {
-    --blue: #48a9d4;
-    --deep: #287f9f;
-    --mint: #8bcfc4;
-    --ink: #34444a;
-    --muted: #78898f;
-    --pale: #f3fafc;
-    --line: #dcebef;
-    --white: #fff;
+    --blue: #4AAFD1;      /* メインブルー */
+    --deep: #287F9F;      /* 濃いブルー */
+    --sky: #72C5DF;       /* 明るいブルー */
+    --aqua: #8BCFC4;      /* アクア・アクセント */
+    --ink: #34444A;       /* メイン文字 */
+    --muted: #a9c5ce;     /* サブ文字 */
+    --pale: #F3FAFC;      /* 薄い背景 */
+    --line: #DCEBEF;      /* 枠線 */
+    --white: #FFFFFF;
     --serif: "Shippori Mincho",serif;
     --sans: "Noto Sans JP",sans-serif
 }
@@ -351,7 +352,7 @@ TOP
 **********************************************/
 /*information*/
 .information{
-  background: #EFF9FC;
+  background: var(--line);
 }
 .information_inner{
   display: grid;
@@ -402,11 +403,11 @@ TOP
   align-items: center;
   gap: 12px;
   padding: 13px 0;
-  border-bottom: 2px dotted var(--line);
+  border-bottom: 2px dotted var(--muted);
   font-size: 14px
 }
 .news-list time {
-  color: #8b999e
+  /*color: #8b999e*/
 }
 .tag {
   background: var(--blue);
@@ -430,7 +431,7 @@ TOP
 }
 .hours i {
   font-style: normal;
-  color: var(--blue)
+  color: var(--blue);
 }
 
 /*greeting*/
@@ -445,7 +446,7 @@ TOP
 
 /*feature*/
 .feature{
-  background: #FBF9EF;
+  background: var(--pale);
 }
 .feature_inner{
   padding: 100px 0;
@@ -502,11 +503,11 @@ TOP
   gap: 20px;
 }
 .medical_item{
-  background: #eff9fc;
+  background: var(--aqua);
   border-radius: 10px;
   padding: 15px;
   text-align: center;
-  color: var(--deep);
+  color: var(--white);
   font-weight: 500;
 }
 .medical_item img{
@@ -522,7 +523,7 @@ TOP
 
 /*gallery*/
 .gallery{
-  background: #F8FAFA;
+  background: var(--pale);
 }
 .top-gallery {
   display: flex;
@@ -630,10 +631,10 @@ SPフローティングボタン
 footer
 **********************************************/
 .footer{
-  background: #EFF9FC;
+  background: var(--line);
 }
 .footer__inner{
-  padding: 100px 0 50px;
+  padding: 100px 0;
   width: min(1160px, calc(100% - 48px));
   margin: auto;
   display: grid;
@@ -806,7 +807,7 @@ footer
 
 /*よくある質問*/
 .faq {
-  background: #FBF9EF;
+  background: var(--pale);
   margin-top: 100px;
 }
 .faq__inner {
@@ -894,7 +895,7 @@ footer
   transform: translateY(0);
 }
 .faq__icon--answer {
-  background: #d49c48;
+  background: #d19b4a;
 }
 .faq__answer p {
   flex: 1;
@@ -941,7 +942,7 @@ footer
   margin: 0 auto;
   padding: 50px;
   background-color: #fff;
-  border: 2px solid var(--mint);
+  border: 2px solid var(--aqua);
   border-radius: 20px;
 }
 .trouble__en {
@@ -950,13 +951,13 @@ footer
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.15em;
-  color: var(--mint);
+  color: var(--aqua);
 }
 .trouble__title {
   margin: 0 auto 45px;
   padding: 20px 30px;
   border-radius: 50px;
-  background-color: var(--mint);
+  background-color: var(--aqua);
   text-align: center;
   font-size: 16px;
   font-weight: 400;
@@ -986,7 +987,7 @@ footer
   width: 20px;
   height: 20px;
   margin-right: 10px;
-  background-color: var(--mint);
+  background-color: var(--aqua);
   color: #fff;
   font-size: 13px;
 }
@@ -1014,7 +1015,7 @@ footer
   width: 20px;
   height: 20px;
   margin-right: 10px;
-  background-color: var(--mint);
+  background-color: var(--aqua);
   color: #fff;
   font-size: 13px;
 }
@@ -1026,7 +1027,7 @@ footer
   width: 100%;
 }
 .medical_table1 th{
-  background-color: var(--mint);
+  background-color: var(--aqua);
   padding: 15px;
   color: #fff;
   font-weight: 500;
@@ -1034,7 +1035,7 @@ footer
 }
 .medical_table1 td{
   padding: 15px;
-  border: 1px solid var(--mint);
+  border: 1px solid var(--aqua);
   line-height: 1.7;
 }
 
@@ -1050,7 +1051,7 @@ footer
   min-width: 800px;
 }
 .medical_table2 th {
-  background-color: var(--mint);
+  background-color: var(--aqua);
   padding: 15px;
   color: #fff;
   font-weight: 500;
@@ -1058,7 +1059,7 @@ footer
 }
 .medical_table2 td {
   padding: 15px;
-  border: 1px solid var(--mint);
+  border: 1px solid var(--aqua);
   line-height: 1.7;
 }
 
@@ -1314,14 +1315,14 @@ footer
   margin: 0 auto;
   padding: 50px;
   background-color: #fff;
-  border: 2px solid var(--mint);
+  border: 2px solid var(--aqua);
   border-radius: 20px;
 }
 .doctor_box__title{
   margin: 0 auto 30px;
   padding: 20px 30px;
   border-radius: 50px;
-  background-color: var(--mint);
+  background-color: var(--aqua);
   text-align: center;
   font-size: 16px;
   font-weight: 400;
@@ -1343,7 +1344,7 @@ footer
 
 /*インタビュー*/
 #doctor03{
-  background: #FBF9EF;
+  background: var(--pale);
 }
 
 /**********************************************
@@ -1363,7 +1364,7 @@ footer
   align-items: center;
   gap: 8px;
   padding: 20px 15px;
-  background: var(--mint);
+  background: var(--aqua);
   color: #fff;
   border-bottom: 1px solid #fff;
 }
@@ -1388,11 +1389,11 @@ footer
 .form_content {
   padding: 15px 20px;
   background: #fff;
-  border-top: 1px solid var(--mint);
-  border-right: 1px solid var(--mint);
+  border-top: 1px solid var(--aqua);
+  border-right: 1px solid var(--aqua);
 }
 .form_content:last-of-type {
-  border-bottom: 1px solid var(--mint);
+  border-bottom: 1px solid var(--aqua);
 }
 .form_content input[type="text"],
 .form_content input[type="email"],
@@ -1456,12 +1457,12 @@ footer
 .contact_notice {
   margin: 50px auto;
   padding: 25px 30px;
-  background: #FBF9EF;
+  background: var(--pale);
 }
 .privacy_box {
   margin: 0 auto;
   padding: 25px 30px;
-  background: #FBF9EF;
+  background: var(--pale);
 }
 .privacy_box h3 {
   margin: 0 0 25px;
