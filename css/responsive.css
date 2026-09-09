@@ -47,12 +47,14 @@
   .sp-nav {
     display: block;
     position: fixed;
-    top: 0;
+    top: 70px;
     right: -100%;
     width: 80%;
     max-width: 350px;
-    height: 100vh;
-    padding: 50px 30px 40px;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 30px 100px;
     background-color: #fff;
     transition: right 0.4s ease;
     z-index: 999;

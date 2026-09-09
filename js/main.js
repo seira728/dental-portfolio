@@ -8,16 +8,32 @@ if (hamburger && spNav) {
     hamburger.classList.toggle('active');
     spNav.classList.toggle('active');
   });
+
+  // ========================================
+  // メニュー内のリンクをクリックしたら閉じる
+  // ========================================
+  const spNavLinks = spNav.querySelectorAll('a');
+  spNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      spNav.classList.remove('active');
+    });
+  });
 }
 
 // ========================================
-// スマホ 診療案内アコーディオン
+// スマホ ドロップダウン
 // ========================================
 const spDropdowns = document.querySelectorAll('.sp-nav__dropdown');
 spDropdowns.forEach(dropdown => {
   const toggle = dropdown.querySelector('.sp-nav__toggle');
   if (!toggle) return;
   toggle.addEventListener('click', () => {
+    spDropdowns.forEach(item => {
+      if (item !== dropdown) {
+        item.classList.remove('active');
+      }
+    });
     dropdown.classList.toggle('active');
   });
 });
