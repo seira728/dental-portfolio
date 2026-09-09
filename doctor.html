@@ -30,7 +30,16 @@
       <nav class="header__nav">
         <ul>
           <li class="header_link"><a href="index.html">ホーム</a></li>
-          <li class="header_link"><a href="about.html">当院について</a></li>
+          <li class="header_link header_link--dropdown">
+            <span class="dropdown-toggle">当院について</span>
+            <ul class="dropdown-menu">
+              <li><a href="about.html#about01">診療方針</a></li>
+              <li><a href="about.html#about02">医院紹介</a></li>
+              <li><a href="about.html#about03">設備紹介</a></li>
+              <li><a href="about.html#about04">施設基準</a></li>
+              <li><a href="about.html#about05">よくある質問</a></li>
+            </ul>
+          </li>
           <li class="header_link header_link--dropdown">
             <span class="dropdown-toggle">診療案内</span>
             <ul class="dropdown-menu">
@@ -57,7 +66,19 @@
     <nav class="sp-nav">
       <ul>
         <li><a href="index.html">ホーム</a></li>
-        <li><a href="about.html">当院について</a></li>
+        <li class="sp-nav__dropdown">
+          <button type="button" class="sp-nav__toggle">
+            当院について
+            <span class="sp-nav__arrow"></span>
+          </button>
+          <ul class="sp-nav__submenu">
+            <li><a href="about.html#about01">診療方針</a></li>
+            <li><a href="about.html#about02">医院紹介</a></li>
+            <li><a href="about.html#about03">設備紹介</a></li>
+            <li><a href="about.html#about04">施設基準</a></li>
+            <li><a href="about.html#about05">よくある質問</a></li>
+          </ul>
+        </li>
         <li class="sp-nav__dropdown">
           <button type="button" class="sp-nav__toggle">
             診療案内
@@ -91,11 +112,12 @@
       </div>
       <div class="cont_flex fade-up">
         <div class="cont_flex_txt">
-          <p>当院では、患者さま一人ひとりのお悩みやご希望に丁寧に耳を傾け、安心して治療を受けていただける歯科医療を大切にしています。<br>
+          <p class="mb30">当院では、患者さま一人ひとりのお悩みやご希望に丁寧に耳を傾け、安心して治療を受けていただける歯科医療を大切にしています。<br>
             「歯医者は怖い」「治療について相談しづらい」と感じている方にも、できるだけリラックスしていただけるよう、わかりやすい説明と丁寧な診療を心がけています。<br>
             また、痛みのある部分だけを治療するのではなく、将来のお口の健康まで見据えた予防・メンテナンスにも力を入れています。<br>
             地域の皆さまに「ここに来てよかった」と思っていただける歯科医院を目指し、スタッフ一同、心を込めて診療してまいります。<br>
             お口のことで気になることがございましたら、どうぞお気軽にご相談ください。</p>
+          <p class="right">院長　山田 太郎</p>
         </div>
         <div class="cont_flex_img">
           <img src="img/doctor.webp" alt="院長">

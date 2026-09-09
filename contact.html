@@ -30,7 +30,16 @@
       <nav class="header__nav">
         <ul>
           <li class="header_link"><a href="index.html">ホーム</a></li>
-          <li class="header_link"><a href="about.html">当院について</a></li>
+          <li class="header_link header_link--dropdown">
+            <span class="dropdown-toggle">当院について</span>
+            <ul class="dropdown-menu">
+              <li><a href="about.html#about01">診療方針</a></li>
+              <li><a href="about.html#about02">医院紹介</a></li>
+              <li><a href="about.html#about03">設備紹介</a></li>
+              <li><a href="about.html#about04">施設基準</a></li>
+              <li><a href="about.html#about05">よくある質問</a></li>
+            </ul>
+          </li>
           <li class="header_link header_link--dropdown">
             <span class="dropdown-toggle">診療案内</span>
             <ul class="dropdown-menu">
@@ -57,7 +66,19 @@
     <nav class="sp-nav">
       <ul>
         <li><a href="index.html">ホーム</a></li>
-        <li><a href="about.html">当院について</a></li>
+        <li class="sp-nav__dropdown">
+          <button type="button" class="sp-nav__toggle">
+            当院について
+            <span class="sp-nav__arrow"></span>
+          </button>
+          <ul class="sp-nav__submenu">
+            <li><a href="about.html#about01">診療方針</a></li>
+            <li><a href="about.html#about02">医院紹介</a></li>
+            <li><a href="about.html#about03">設備紹介</a></li>
+            <li><a href="about.html#about04">施設基準</a></li>
+            <li><a href="about.html#about05">よくある質問</a></li>
+          </ul>
+        </li>
         <li class="sp-nav__dropdown">
           <button type="button" class="sp-nav__toggle">
             診療案内

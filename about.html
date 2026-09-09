@@ -30,7 +30,16 @@
       <nav class="header__nav">
         <ul>
           <li class="header_link"><a href="index.html">ホーム</a></li>
-          <li class="header_link"><a href="about.html">当院について</a></li>
+          <li class="header_link header_link--dropdown">
+            <span class="dropdown-toggle">当院について</span>
+            <ul class="dropdown-menu">
+              <li><a href="about.html#about01">診療方針</a></li>
+              <li><a href="about.html#about02">医院紹介</a></li>
+              <li><a href="about.html#about03">設備紹介</a></li>
+              <li><a href="about.html#about04">施設基準</a></li>
+              <li><a href="about.html#about05">よくある質問</a></li>
+            </ul>
+          </li>
           <li class="header_link header_link--dropdown">
             <span class="dropdown-toggle">診療案内</span>
             <ul class="dropdown-menu">
@@ -57,7 +66,19 @@
     <nav class="sp-nav">
       <ul>
         <li><a href="index.html">ホーム</a></li>
-        <li><a href="about.html">当院について</a></li>
+        <li class="sp-nav__dropdown">
+          <button type="button" class="sp-nav__toggle">
+            当院について
+            <span class="sp-nav__arrow"></span>
+          </button>
+          <ul class="sp-nav__submenu">
+            <li><a href="about.html#about01">診療方針</a></li>
+            <li><a href="about.html#about02">医院紹介</a></li>
+            <li><a href="about.html#about03">設備紹介</a></li>
+            <li><a href="about.html#about04">施設基準</a></li>
+            <li><a href="about.html#about05">よくある質問</a></li>
+          </ul>
+        </li>
         <li class="sp-nav__dropdown">
           <button type="button" class="sp-nav__toggle">
             診療案内
@@ -179,8 +200,124 @@
       </div>
     </section>
 
+    <!------------ 施設基準 ------------>
+    <section id="about04" class="container">
+      <div class="section-title">
+        <span>FACILITY STANDARDS</span>
+        <h2>施設基準</h2>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>歯科初診料の注1に規定する基準（歯初診）第13号</h4>
+        </div>
+        <p>歯科診療時の院内感染対策についての研修を受けた常勤の歯科医師及びスタッフが在籍し、規定された装置・器具の設置をしています。また、定期的に職員に対して院内感染対策に関する研修会を開いています。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>歯科外来診療医療安全対策1（外安全1）第630号</h4>
+        </div>
+        <p>当院には、医療安全対策に関する研修を受けた歯科医師及び医療安全管理者を配置しています。また自動体外式除細動器（AED）を保有し、緊急時の対応及び医療安全について十分な体制を整備しています。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>歯科外来診療感染対策加算1（外感染1）第642号</h4>
+        </div>
+        <p>当院には、外来診療時における院内感染対策に関する研修を受けた歯科医師及び院内感染管理者を配置しています。院内感染対策に関して当院では標準予防策を講じ、十分な消毒・滅菌体制を有しています。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>歯科治療時医療管理料（医管）第131号</h4>
+        </div>
+        <p>下記の疾患に該当する患者様の歯科治療時における全身状態の変化などを把握するため、血圧、脈拍、経皮的動脈血酸素飽和度（SPO2）をモニタリングする体制を整えています。<br>対象疾患は　高血圧性疾患　虚血性心疾患　不整脈　心不全　脳血管障害　喘息　慢性気管支炎　糖尿病　甲状腺機能低下症　甲状腺機能亢進症　副腎皮質機能不全　てんかん　慢性腎臓病（腎代謝療法を行う患者に限る）の患者　人工呼吸器を装着している患者又は在宅酸素療法を行っている患者　です。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>歯科訪問診療料の注 15に規定する基準の施設基準（歯訪診）第293号</h4>
+        </div>
+        <p>直近1ヶ月に歯科診療所および外来で歯科診療を行った患者様のうち、歯科訪問診療を行った方の割合が95％未満の診療所です。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>手術用顕微鏡加算（手顕微加）第6号</h4>
+        </div>
+        <p>3根管以上の複雑な解剖学的根管形態を有する歯に対して、歯科用3次元エックス線断層撮影装置を用いて得られた画像診断の結果を踏まえ手術用顕微鏡を用いて根管治療を行い加圧根充を行った場合に加算されます。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>口腔粘膜処置（口腔粘膜）第11号</h4>
+        </div>
+        <p>レーザー治療に関する専門知識と3年以上の経験を持つ歯科医師が1名以上おり、口腔内の軟組織切開、止血、凝固、蒸散ができるレーザー機器を備えている場合に適用されます。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>う蝕歯無痛的窩洞形成加算（う蝕無痛）第62号</h4>
+        </div>
+        <p>レーザー照射による無痛的な窩洞形成（虫歯の除去と詰め物や被せ物のための穴の形成）を行う際に算定できる加算です。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>歯科技工士連携加算1（歯技連1）第118号</h4>
+        </div>
+        <p>院外の歯科技工所との連携しており、歯冠補綴物や義歯を作成する際に歯科医師と協力して口腔内の確認等を行う体制を整えています。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>光学印象歯科技工士連携加算（光印象）第46号</h4>
+        </div>
+        <p>歯科補綴治療に係る専門の知識及び3年以上の経験を有する歯科医師が1名以上配置され、また保険医療機関内に歯科技工士が配置されており、歯科医師と歯科技工士が協力して口腔内の確認を行い光学（デジタル）印象装置を活用する体制を整えています。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>CAD/CAM冠及びCAD/CAMインレー（歯CAD）第483号</h4>
+        </div>
+        <p>歯科補綴治療に係る専門の知識及び3年以上の経験を有する歯科医師が1名以上配置され、また保険医療機関内に歯科技工士が配置されており、歯科用CAD/CAM装置が設置されていることでCAD/CAM冠及びCAD/CAMインレーを製作する体制を整えています。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>歯周組織再生誘導手術（GTR）第33号</h4>
+        </div>
+        <p>歯周病によって失われた歯周組織（歯槽骨や歯根膜など）を再生させる治療法です。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>手術時歯根面レーザー応用（手術歯根）第24号</h4>
+        </div>
+        <p>歯肉剥離掻爬手術または歯周組織再生誘導手術において、明視下で蒸散により歯根面の歯石除去を行うことが可能なものとして保険適応となっているレーザー機器（Er:YAGレーザー）を用いてレーザー照射を行います。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>歯根端切除術（注3の規定）（根切顕微）第5号</h4>
+        </div>
+        <p>手術用顕微鏡を用いた治療に係る専門の知識及び3年以上の経験を有する歯科医師が1名以上配置されており、手術用顕微鏡が設置されています。歯科用3次元エックス線断層撮影装置を用いて得られた画像診断の結果を踏まえ、手術用顕微鏡を用いて歯根端切除手術を行う体制を整えています。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>レーザー機器（手光機）第10号</h4>
+        </div>
+        <p>口腔内の軟組織の切開、止血、凝固等が可能なものとして保険適用されているレーザー機器を使用した手術を行っています。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>クラウンブリッジ維持管理料(補管) 第671号</h4>
+        </div>
+        <p>歯冠補綴物またはブリッジを装着した患者様に対して、維持管理に係る説明を行い、その内容を文書により提供しています。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>歯科外来・在宅ベースアップ評価料(歯外在ベⅠ) 第18号</h4>
+        </div>
+        <p>歯科医院において、歯科衛生士や歯科技工士などの医療従事者の賃上げを目的とする評価料があります。これは、初診時、再診時、訪問診療時に算定される加算で、診療報酬に加算され、賃上げに充当されます。</p>
+      </div>
+      <div class="mb50">
+        <div class="medical_section_title">
+          <h4><i class="fa-solid fa-square"></i>医療DX推進体制整備加算（医療DX）第559号</h4>
+        </div>
+        <p>医療機関がデジタル技術を活用して医療の質の向上や効率化を図る体制を整備した場合に算定できる加算です。</p>
+      </div>
+    </section>
+
     <!------------ よくある質問 ------------>
-    <section id="about04" class="faq">
+    <section id="about05" class="faq">
       <div class="faq__inner container">
         <div class="section-title">
           <span>Q&A</span>
