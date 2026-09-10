@@ -446,7 +446,7 @@ TOP
 
 /*feature*/
 .feature{
-  background: var(--pale);
+  background: #fcfaf3;
 }
 .feature_inner{
   padding: 100px 0;
