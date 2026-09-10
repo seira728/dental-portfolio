@@ -365,7 +365,8 @@ TOP
     padding: 15px;
   }
   .form_content{
-    border-left: 1px solid var(--mint);
+    border-left: 1px solid var(--aqua);
+    border-right: 1px solid var(--aqua);
     padding: 15px;
   }
 }
