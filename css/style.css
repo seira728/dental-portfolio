@@ -121,14 +121,14 @@ header
   position: fixed;
   z-index: 100;
   width: 100%;
-  border-bottom: 1px solid var(--blue);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 .header__inner {
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 10px;
+  padding: 0 10px;
 }
 .header__logo h1{
   margin: 0;
@@ -509,6 +509,10 @@ TOP
   text-align: center;
   color: var(--white);
   font-weight: 500;
+  transition: 0.3s ease;
+}
+.medical_item:hover{
+  transform: translateY(-3px);
 }
 .medical_item img{
   width: 30%;
