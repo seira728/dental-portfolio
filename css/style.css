@@ -678,7 +678,7 @@ footer
   background-image: url("../img/mv03.webp");
   background-size: cover;
   background-position: center;
-  padding-top: 100px;
+  padding-top: 85px;
 }
 .sub_mv::before {
   content: "";
